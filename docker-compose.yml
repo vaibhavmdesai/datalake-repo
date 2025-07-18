@@ -81,6 +81,14 @@ services:
     networks:
       - trino-network
 
+  zookeeper:
+    image: wurstmeister/zookeeper
+    hostname: zookeeper
+    ports: 
+      - "2181:2181"
+    networks:
+      - trino-network
+
   postgresdb:
     image: dannyma/psql-docker:latest
     environment:
